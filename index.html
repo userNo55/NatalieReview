@@ -1,171 +1,200 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natalie Review</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Natalia Review</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #4a4a4a; /* lighter gray */
-      color: #eef6ff; /* almost white blue */
-    }
-    header {
-      padding: 2rem;
-      text-align: center;
-      background: #ccff00; /* neon lime */
-      font-size: 2rem;
-      font-weight: 600;
-    }
-    .language-toggle {
-      text-align: right;
-      padding: 1rem;
-    }
-    .language-toggle button {
-      margin-left: 0.5rem;
-      background: transparent;
-      border: none;
-      color: #eef6ff;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .hero {
-      text-align: center;
-      padding: 2rem;
-      background-color: #5a5a5a; /* mid gray */
-    }
-    .hero h2 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    .hero ul {
-      list-style: none;
-      padding: 0;
-    }
-    .hero li {
-      margin: 0.5rem 0;
-    }
-    section {
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, select, textarea, button {
-      padding: 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    input, select, textarea {
-      background-color: #6a6a6a; /* lighter gray */
-      color: #eef6ff;
-    }
-    button {
-      background-color: #00aaff;
-      color: white;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background-color: #008fcc;
-    }
-    footer {
-      padding: 2rem;
-      text-align: center;
-      background: #3a3a3a;
-      font-size: 0.9rem;
-    }
+      font-family: Arial, sans-serif;
+      background-color: #2f2f2f;
+      color: #f2f2f2;
+    }header {
+  background-color: #ccff00;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+ 
+#site-title {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #1a1a1a; /* Darker text for readability */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+}
+ 
+.language-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+ 
+.language-toggle button {
+  background: none;
+  border: none;
+  color: #2f2f2f;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+ 
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+ 
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+ 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #444;
+  color: #f2f2f2;
+}
+ 
+option {
+  background-color: #2f2f2f;
+  color: #f2f2f2;
+}
+ 
+button.submit-btn {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #00aaff;
+  color: #f2f2f2;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+ 
+button.submit-btn:hover {
+  background-color: #008fcc;
+}
+ 
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #3a3a3a;
+  font-size: 0.9rem;
+}
+ 
   </style>
-</head>
-<body>
-  <div class="language-toggle">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('ru')">RU</button>
-  </div>  <header>
-    Natalie Review
-  </header>  <div class="hero">
-    <h2>Services & Pricing</h2>
-    <ul>
-      <li><strong>Website</strong> – ₽5000 (~$50): Landing or one-page site with request form</li>
-      <li><strong>Website + Mobile</strong> – ₽7000 (~$70): Website version + mobile layout</li>
-      <li><strong>Mobile App</strong> – ₽6000 (~$60): Simple prototype for showcasing core idea</li>
-      <li><strong>Business Review</strong> – ₽15000+travel: Full analysis with field research</li>
-    </ul>
-  </div>  <section>
-    <p id="desc">Order professional reviews and feedback for your digital business. Clear, direct, and effective.</p>
-    <form id="reviewForm">
-      <label>
-        Select Service:
-        <select name="service" required>
-          <option value="">-- Choose a service --</option>
-          <option value="Website Only">Website</option>
-          <option value="Website + Mobile">Website + Mobile</option>
-          <option value="Mobile App">Mobile App</option>
-          <option value="Business Review">Business Review</option>
-        </select>
-      </label>
-      <label>
-        Your Name:
-        <input type="text" name="name" required />
-      </label>
-      <label>
-        Company Name:
-        <input type="text" name="company" />
-      </label>
-      <label>
-        Website URL:
-<input type="url? name="website? placeholder="https://example.com" required />
-      </label>
-      <label>
-        Email:
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Comment:
-        <textarea name="comment" rows="5" required></textarea>
-      </label>
-      <button type="submit">Submit Request</button>
-    </form>
+</head><body>
+  <header>
+    <div class="language-toggle">
+      <button onclick="switchLanguage('en')">EN</button>
+      <button onclick="switchLanguage('ru')">RU</button>
+    </div>
+    <h1 id="site-title">Natalia Review</h1>
+  </header>  <section>
+    <h2 id="services-title">Services & Pricing</h2>
+    <div id="services-description">
+      <p><strong>Website – ₽5000 (~$50):</strong> Landing or one-page site with request form</p>
+      <p><strong>Website + Mobile – ₽7000 (~$70):</strong> Website version + mobile layout</p>
+      <p><strong>Mobile App – ₽6000 (~$60):</strong> Simple prototype for showcasing core idea</p>
+      <p><strong>Business Review – ₽15000+travel:</strong> Full analysis with field research</p>
+    </div>
+  </section>  <section>
+    <p id="description">Order a professional review and feedback for your digital business. Clear, direct, and effective.</p><form id="reviewForm">
+  <label for="service" id="label-service">Select Service:</label>
+  <select id="service" name="service" required>
+    <option value="" disabled selected>Choose a service</option>
+    <option>Website</option>
+    <option>Website + Mobile</option>
+    <option>Mobile App</option>
+    <option>Business Review</option>
+  </select>
+ 
+  <label for="name" id="label-name">Your Name:</label>
+  <input type="text" id="name" name="name" required />
+ 
+  <label for="company" id="label-company">Company Name:</label>
+  <input type="text" id="company" name="company" />
+ 
+  <label for="url" id="label-url">Website URL:</label>
+<input type="url" id="url" name="website" placeholder="https://example.com" required />
+ 
+  <label for="email" id="label-email">Email:</label>
+  <input type="email" id="email" name="email" required />
+ 
+  <label for="comment" id="label-comment">Comment:</label>
+  <textarea id="comment" name="comment" rows="5" required></textarea>
+ 
+  <button type="submit" class="submit-btn">Submit Request</button>
+</form>
+ 
   </section>  <footer>
-    &copy; 2025 Natalie Review. All rights reserved.
+    &copy; 2025 Natalia Review. All rights reserved.
   </footer>  <script>
-    function setLanguage(lang) {
-      const text = {
-        en: {
-          desc: 'Order professional reviews and feedback for your digital business. Clear, direct, and effective.',
-          button: 'Submit Request'
+    const translations = {
+      en: {
+        title: "Natalia Review",
+        servicesTitle: "Services & Pricing",
+        servicesDescription: `
+          <p><strong>Website – ₽5000 (~$50):</strong> Landing or one-page site with request form</p>
+          <p><strong>Website + Mobile – ₽7000 (~$70):</strong> Website version + mobile layout</p>
+          <p><strong>Mobile App – ₽6000 (~$60):</strong> Simple prototype for showcasing core idea</p>
+          <p><strong>Business Review – ₽15000+travel:</strong> Full analysis with field research</p>
+        `,
+        description: "Order a professional review and feedback for your digital business. Clear, direct, and effective.",
+        labels: {
+          service: "Select Service:",
+          name: "Your Name:",
+          company: "Company Name:",
+          url: "Website URL:",
+          email: "Email:",
+          comment: "Comment:"
         },
-        ru: {
-          desc: 'Закажите профессиональный обзор и обратную связь для вашего цифрового бизнеса. Ясно, прямо и эффективно.',
-          button: 'Отправить запрос'
-        }
-      };
-      document.getElementById('desc').innerText = text[lang].desc;
-      document.querySelector('button[type="submit"]').innerText = text[lang].button;
-    }
- 
-    document.getElementById('reviewForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-const form = e.target;
-      const data = new FormData(form);
- 
-      try {
-await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec', {
-          method: 'POST',
-          body: data,
-        });
-        alert('Request submitted successfully. We’ll contact you soon.');
-        form.reset();
-      } catch (err) {
-        alert('Submission failed. Please try again later.');
+        button: "Submit Request"
+      },
+      ru: {
+        title: "Обзор Натальи",
+        servicesTitle: "Услуги и Цены",
+        servicesDescription: `
+          <p><strong>Веб-сайт – ₽5000 (~$50):</strong> Лендинг или одностраничник с формой запроса</p>
+          <p><strong>Веб-сайт + Мобильная версия – ₽7000 (~$70):</strong> Версия сайта + мобильная верстка</p>
+          <p><strong>Мобильное приложение – ₽6000 (~$60):</strong> Простой прототип для демонстрации идеи</p>
+          <p><strong>Бизнес-обзор – ₽15000 + поездка:</strong> Полный анализ с полевыми исследованиями</p>
+        `,
+        description: "Закажите профессиональный обзор и обратную связь для вашего цифрового бизнеса. Ясно, прямо и эффективно.",
+        labels: {
+          service: "Выберите услугу:",
+          name: "Ваше имя:",
+          company: "Название компании:",
+          url: "Адрес сайта:",
+          email: "Эл. почта:",
+          comment: "Комментарий:"
+        },
+        button: "Отправить запрос"
       }
-    });
-  </script></body>
-</html>
+    };
+ 
+    function switchLanguage(lang) {
+      const t = translations[lang];
+      document.getElementById('site-title').textContent = t.title;
+      document.getElementById('services-title').textContent = t.servicesTitle;
+      document.getElementById('services-description').innerHTML = t.servicesDescription;
+      document.getElementById('description').textContent = t.description;
+      document.getElementById('label-service').textContent = t.labels.service;
+document.getElementById('label-name').textContent = t.labels.name;
+document.getElementById('label-company').textContent = t.labels.company;
+      document.getElementById('label-url').textContent = t.labels.url;
+document.getElementById('label-email').textContent = t.labels.email;
+      document.getElementById('label-comment').textContent = t.labels.comment;
+      document.querySelector('.submit-btn').textContent = t.button;
+    }
+  </script></body></html>
