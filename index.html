@@ -8,15 +8,43 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #2a2a2a;
-      color: #b3d9ff;
+      background-color: #4a4a4a; /* lighter gray */
+      color: #eef6ff; /* almost white blue */
     }
     header {
       padding: 2rem;
       text-align: center;
-      background: #3a3a3a;
+      background: #ccff00; /* neon lime */
       font-size: 2rem;
       font-weight: 600;
+    }
+    .language-toggle {
+      text-align: right;
+      padding: 1rem;
+    }
+    .language-toggle button {
+      margin-left: 0.5rem;
+      background: transparent;
+      border: none;
+      color: #eef6ff;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .hero {
+      text-align: center;
+      padding: 2rem;
+      background-color: #5a5a5a; /* mid gray */
+    }
+    .hero h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .hero ul {
+      list-style: none;
+      padding: 0;
+    }
+    .hero li {
+      margin: 0.5rem 0;
     }
     section {
       padding: 2rem;
@@ -35,8 +63,8 @@
       font-size: 1rem;
     }
     input, select, textarea {
-      background-color: #3f3f3f;
-      color: #b3d9ff;
+      background-color: #6a6a6a; /* lighter gray */
+      color: #eef6ff;
     }
     button {
       background-color: #00aaff;
@@ -57,19 +85,30 @@
   </style>
 </head>
 <body>
-  <header>
+  <div class="language-toggle">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('ru')">RU</button>
+  </div>  <header>
     Natalie Review
-  </header>  <section>
-    <p>Order professional reviews and feedback for your digital business. Clear, direct, and effective.</p>
+  </header>  <div class="hero">
+    <h2>Services & Pricing</h2>
+    <ul>
+      <li><strong>Website</strong> – ₽5000 (~$50): Landing or one-page site with request form</li>
+      <li><strong>Website + Mobile</strong> – ₽7000 (~$70): Website version + mobile layout</li>
+      <li><strong>Mobile App</strong> – ₽6000 (~$60): Simple prototype for showcasing core idea</li>
+      <li><strong>Business Review</strong> – ₽15000+travel: Full analysis with field research</li>
+    </ul>
+  </div>  <section>
+    <p id="desc">Order professional reviews and feedback for your digital business. Clear, direct, and effective.</p>
     <form id="reviewForm">
       <label>
         Select Service:
         <select name="service" required>
           <option value="">-- Choose a service --</option>
-          <option value="Website Only">Website – ₽5000 (~$50)</option>
-          <option value="Website + Mobile">Website + Mobile – ₽7000 (~$70)</option>
-          <option value="Mobile App">Mobile App – ₽6000 (~$60)</option>
-          <option value="Business Review">Business Service Review – ₽15000 + travel & rep. costs</option>
+          <option value="Website Only">Website</option>
+          <option value="Website + Mobile">Website + Mobile</option>
+          <option value="Mobile App">Mobile App</option>
+          <option value="Business Review">Business Review</option>
         </select>
       </label>
       <label>
@@ -97,6 +136,21 @@
   </section>  <footer>
     &copy; 2025 Natalie Review. All rights reserved.
   </footer>  <script>
+    function setLanguage(lang) {
+      const text = {
+        en: {
+          desc: 'Order professional reviews and feedback for your digital business. Clear, direct, and effective.',
+          button: 'Submit Request'
+        },
+        ru: {
+          desc: 'Закажите профессиональный обзор и обратную связь для вашего цифрового бизнеса. Ясно, прямо и эффективно.',
+          button: 'Отправить запрос'
+        }
+      };
+      document.getElementById('desc').innerText = text[lang].desc;
+      document.querySelector('button[type="submit"]').innerText = text[lang].button;
+    }
+ 
     document.getElementById('reviewForm').addEventListener('submit', async function(e) {
       e.preventDefault();
 const form = e.target;
